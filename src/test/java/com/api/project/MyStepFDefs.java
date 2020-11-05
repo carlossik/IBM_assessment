@@ -20,33 +20,42 @@ public class MyStepFDefs {
         @Given("I request pet information from the API")
         public void i_request_pet_information_from_the_API() throws IOException {
 
-                CloseableHttpClient httpClient = HttpClients.createDefault();
 
-                try {
-                        HttpGet request = new HttpGet("https://petstore.swagger.io/#/pet/findPetsByStatus?/status=available");
-                        // add request header
-                        CloseableHttpResponse response = httpClient.execute(request);
-                        try {
-                                // Get HttpResponse Status
-                                HttpEntity entity = (HttpEntity) response.getEntity();
-                                if (entity != null) {
-                                        // return it as a String
-                                        String result = EntityUtils.toString(entity);
-                                        JsonArray ja = new JsonArray();
-                                        System.out.println(result.toString());
-                                }
+                GetPetData getdata = new GetPetData();
+                getdata.getPetData();
 
-                        } finally {
-                                response.close();
-                        }
-                } finally {
-                        httpClient.close();
-                }
+//                CloseableHttpClient httpClient = HttpClients.createDefault();
+//
+//                try {
+//                        HttpGet request = new HttpGet("https://petstore.swagger.io/#/pet/findPetsByStatus?/status=available");
+//                        // add request header
+//                        CloseableHttpResponse response = httpClient.execute(request);
+//                        try {
+//                                // Get HttpResponse Status
+//                                HttpEntity entity = (HttpEntity) response.getEntity();
+//                                if (entity != null) {
+//                                        // return it as a String
+//                                        String result = EntityUtils.toString(entity);
+//                                        JsonArray ja = new JsonArray();
+//                                        //System.out.println(result.toString());
+//                                }
+//
+//                        } finally {
+//                                response.close();
+//                        }
+//                } finally {
+//                        httpClient.close();
+//                }
 
         }
 
         @When("I request for the number of available pets with status {string}")
-        public void i_request_for_the_number_of_available_pets_with_status(String string) {
+        public void i_request_for_the_number_of_available_pets_with_status(String string) throws IOException {
+
+
+
+
+
 
         }
 

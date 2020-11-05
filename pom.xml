@@ -86,7 +86,7 @@
             <version>2.9.7</version>
 
         </dependency>
-        
+
 
         <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
 
@@ -106,6 +106,12 @@
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpclient</artifactId>
             <version>4.5.13</version>
+        </dependency>
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20200518</version>
+            <scope>test</scope>
         </dependency>
 
     </dependencies>
