@@ -1,5 +1,6 @@
 package com.api.project;
 
+import com.mashape.unirest.http.exceptions.UnirestException;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -18,39 +19,22 @@ import java.io.IOException;
 public class MyStepFDefs {
 
         @Given("I request pet information from the API")
-        public void i_request_pet_information_from_the_API() throws IOException {
+        public void i_request_pet_information_from_the_API() throws IOException, UnirestException {
+
+                PetDataUnirest unirest = new PetDataUnirest();
+                unirest.petDataUnirest();
 
 
-                GetPetData getdata = new GetPetData();
-                getdata.getPetData();
+//                GetPetData getdata = new GetPetData();
+//                getdata.getPetData();
 
-//                CloseableHttpClient httpClient = HttpClients.createDefault();
-//
-//                try {
-//                        HttpGet request = new HttpGet("https://petstore.swagger.io/#/pet/findPetsByStatus?/status=available");
-//                        // add request header
-//                        CloseableHttpResponse response = httpClient.execute(request);
-//                        try {
-//                                // Get HttpResponse Status
-//                                HttpEntity entity = (HttpEntity) response.getEntity();
-//                                if (entity != null) {
-//                                        // return it as a String
-//                                        String result = EntityUtils.toString(entity);
-//                                        JsonArray ja = new JsonArray();
-//                                        //System.out.println(result.toString());
-//                                }
-//
-//                        } finally {
-//                                response.close();
-//                        }
-//                } finally {
-//                        httpClient.close();
-//                }
 
         }
 
         @When("I request for the number of available pets with status {string}")
         public void i_request_for_the_number_of_available_pets_with_status(String string) throws IOException {
+
+
 
 
 
